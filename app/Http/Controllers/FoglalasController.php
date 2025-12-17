@@ -10,9 +10,9 @@ class FoglalasController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($datum)
     {
-        $adatok = Appointment::all();
+        $adatok = Appointment::where('date', "=", $datum)->get();
         return response()->json($adatok,200,options:JSON_UNESCAPED_UNICODE);
     }
 

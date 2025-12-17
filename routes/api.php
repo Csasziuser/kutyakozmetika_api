@@ -8,4 +8,4 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::get('/foglalasok',[FoglalasController::class,"index"]);
+Route::get('/foglalasok/{datum}',[FoglalasController::class,"index"]);
