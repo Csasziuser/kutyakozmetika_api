@@ -21,7 +21,22 @@ class FoglalasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "customer_name"=>"string|max:255|required",
+            "day"=>"date|required",
+            "time"=>"string|max:255|required"
+        ],
+        [
+            "required"=>":attribute megadása kötelező",
+            "string"=>":attribute legyél szöveg ",
+            "max"=>"az adott változó ilyen hosszú legyen :max ",
+            "date"=>"a napnak dátumnak kell lennie"
+        ],
+        [
+            "customer_name"=>"Foglaló neve",
+            "day"=>"nap",
+            "time"=>"időpont"
+        ]);
     }
 
     /**
