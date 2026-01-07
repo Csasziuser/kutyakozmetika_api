@@ -12,7 +12,7 @@ class FoglalasController extends Controller
      */
     public function index($datum)
     {
-        $adatok = Appointment::where('date', "=", $datum)->get();
+        $adatok = Appointment::where('day', "=", $datum)->get();
         return response()->json($adatok,200,options:JSON_UNESCAPED_UNICODE);
     }
 
