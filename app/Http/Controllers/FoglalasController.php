@@ -66,10 +66,9 @@ class FoglalasController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Appointment $appointment)
     {
-        $appointment = Appointment::find($id);
-        $appointment->delete();
+        Appointment::destroy($appointment);
         return response()->json("Sikeres törlés", 200, options:JSON_UNESCAPED_UNICODE);
     }
 }
