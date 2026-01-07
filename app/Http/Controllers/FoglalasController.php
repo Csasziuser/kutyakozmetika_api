@@ -68,6 +68,8 @@ class FoglalasController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $appointment = Appointment::find($id);
+        $appointment->delete();
+        return response()->json("Sikeres törlés", 200, options:JSON_UNESCAPED_UNICODE);
     }
 }

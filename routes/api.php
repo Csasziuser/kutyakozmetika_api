@@ -12,3 +12,5 @@ Route::get('/foglalasok/{datum}',[FoglalasController::class,"index"]);
 
 Route::post('/foglalas',[FoglalasController::class,"store"]);
 
+Route::delete('/foglalas/{foglalas}',[FoglalasController::class,"destroy"]);
+
