@@ -37,6 +37,14 @@ class FoglalasController extends Controller
             "day"=>"nap",
             "time"=>"időpont"
         ]);
+
+        Appointment::create([
+            "customer_name"=>$request["customer_name"],
+            "day"=>$request["day"],
+            "time"=>$request["time"]
+        ]);
+
+        return response()->json("Rögzítve", 201, options:JSON_UNESCAPED_UNICODE);
     }
 
     /**
