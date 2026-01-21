@@ -53,6 +53,7 @@ class FoglalasController extends Controller
     public function show(string $id)
     {
         return response()->json(["message" => "API message"], 201);
+        return redirect('/welcome');
     }
 
     /**
